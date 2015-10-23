@@ -8,6 +8,9 @@
 
 import UIKit
 
+//how to right align display text
+//do all numbers/operations need to be in display before user hits equals
+//how much error handling is required (i.e. if someone presses operand but no numbers)
 class ViewController: UIViewController {
     var numStack = [Double]()
     var op = ""
