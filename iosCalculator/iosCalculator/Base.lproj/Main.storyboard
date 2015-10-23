@@ -122,7 +122,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHw-c7-lj3">
-                                <rect key="frame" x="275" y="502" width="30" height="30"/>
+                                <rect key="frame" x="70" y="561" width="30" height="30"/>
                                 <state key="normal" title="Fact"/>
                                 <connections>
                                     <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KIm-Sk-rkY"/>
@@ -152,6 +152,20 @@
                                 <state key="normal" title="1"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rah-tu-uHs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-yP-4FG">
+                                <rect key="frame" x="272" y="561" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fP8-jD-cUZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVv-Dn-9bh">
+                                <rect key="frame" x="275" y="502" width="30" height="30"/>
+                                <state key="normal" title="."/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="T2b-Yo-odD"/>
                                 </connections>
                             </button>
                         </subviews>

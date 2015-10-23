@@ -17,24 +17,31 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UITextField!
 
+    @IBAction func clear(sender: UIButton) {
+        numStack = []
+        op = ""
+        result = 0
+        lastPressed = true
+        numString = ""
+        display.text = ""
+    }
     func basicOperation() {
-        let num2 = numStack.removeLast()
-        let num1 = numStack.removeLast()
-        
-        switch op {
-            case "+":
-                result = num1 + num2
-            case "-":
-                result = num1 - num2
-            case "*":
-                result = num1 * num2
-            case "/":
-                result = num1 / num2
-            case "%":
-                result = num1 % num2
-            default :
-                result = 0.0
+        var num1 = numStack.removeFirst()
+        for num in numStack {
+            switch op {
+                case "+":
+                    num1+=num
+                case "-":
+                    num1-=num
+                case "*":
+                    num1*=num
+                case "/":
+                    num1/=num
+                default:
+                    num1%=num
+            }
         }
+        result = num1
     }
     
     func multi() {
@@ -59,6 +66,7 @@ class ViewController: UIViewController {
             
         }
         result = total
+        display.text = "\(result)"
     }
     
     func convert(incoming:String) -> Double {
@@ -69,11 +77,8 @@ class ViewController: UIViewController {
         NSLog(sender.titleLabel!.text!)
         if lastPressed {
             display.text = numString + sender.titleLabel!.text!
-                //display.text! + sender.titleLabel!.text!
-            //numStack.append(convert(display.text! + sender.titleLabel!.text!))
         } else {
             display.text = sender.titleLabel!.text!
-            //numStack.append(convert(sender.titleLabel!.text!))
         }
         numString = numString + sender.titleLabel!.text!
         lastPressed = true
@@ -87,11 +92,10 @@ class ViewController: UIViewController {
         switch op {
             case "+", "-", "*", "/", "%":
                 basicOperation()
-            case "Count", "Avg":
-                multi()
             default:
-                factorial()
+                multi()
         }
+        numStack = []
         display.text = "\(result)"
     }
     
@@ -102,6 +106,9 @@ class ViewController: UIViewController {
         op = sender.titleLabel!.text!
         lastPressed = false
         display.text = op
+        if op == "Fact" {
+            factorial()
+        }
     }
     
     override func viewDidLoad() {
